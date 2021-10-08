@@ -8,23 +8,13 @@
 
 // returns: array of strings
 
-// pseudocode:
-// ===========
-// assign allLowerCase as an empty array 
-
-// iterate through each element of domainNames
-//     element.toLowerCase() - > add it to allLowerCase
-
-// return allLowerCase
+function lowerCaseTransform(element) {
+    return element.toLowerCase();
+}
 
 function lowerCaseDomains(domainNames) {
-    let allLowerCase = [];
-
-    for (let domain of domainNames) {
-        allLowerCase.push(domain.toLowerCase());
-    }
-
-    return allLowerCase
+    let allLowerCase = domainNames.map(lowerCaseTransform);
+    return allLowerCase;
 }
 
 // test cases
