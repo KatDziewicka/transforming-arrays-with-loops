@@ -21,8 +21,8 @@ function onlyInitials(fullNames) {
     }
     let initials = [];
     for (let splitName of splitNames) {
-        for (let n of splitName) {
-            initials.push(`${n.charAt(0)}.`)
+        for (let n=0; n<splitName.length; n+=2) {
+            initials.push(`${splitName[n].charAt(0)}.${splitName[n+1].charAt(0)}`)
         }
     }
     return initials
@@ -31,3 +31,7 @@ function onlyInitials(fullNames) {
 // test
 console.log(onlyInitials(["Ash Ketchum", 
 "Lucy Heartfilia", "Yugi Moto"]), ["A.K.", "L.H.", "Y.M."])
+
+console.log(onlyInitials(["Katarzyna Dziewicka", 
+"Thea Littlewood", "Aleksandra Kedzior", "Malgorzata Zielinska", "Lidia Dziewicka"]),
+ ["K.D.", "T.L.", "A.K.", "M.Z.", "L.D."])
